@@ -12,31 +12,31 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { BeerDetailComponent } from './beer-detail/beer-detail.component';
+import { BeersComponent } from './beers/beers.component';
 import { MessagesComponent } from './messages/messages.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { BeerSearchComponent } from './beer-search/beer-search.component';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    AppRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
-  ],
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    HeroSearchComponent,
-  ],
-  bootstrap: [ AppComponent ]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        AppRoutingModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, { dataEncapsulation: false }
+        )
+    ],
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        BeersComponent,
+        BeerDetailComponent,
+        MessagesComponent,
+        BeerSearchComponent,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
