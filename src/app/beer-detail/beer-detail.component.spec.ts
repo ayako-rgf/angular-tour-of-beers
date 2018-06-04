@@ -1,4 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Location } from '@angular/common';
 
 import { BeerDetailComponent } from './beer-detail.component';
 
@@ -8,7 +13,21 @@ describe('BeerDetailComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [BeerDetailComponent]
+            declarations: [
+                BeerDetailComponent
+            ],
+            imports: [
+                FormsModule,
+                MatInputModule,
+                HttpClientModule,
+                RouterTestingModule
+            ],
+            providers: [{
+                provide: Location,
+                useClass: class {
+                    back = jasmine.createSpy('back');
+                }
+            }]
         })
             .compileComponents();
     }));
@@ -21,5 +40,13 @@ describe('BeerDetailComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+    it('ngOnInit', () => {
+        component.ngOnInit();
+    });
+    it('goBack', () => {
+        const location = fixture.debugElement.injector.get(Location);
+        component.goBack();
+        expect(location.back).toHaveBeenCalled();
     });
 });
