@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { BeersComponent } from './beers/beers.component';
-import { MessagesComponent } from './messages/messages.component';
 import { BeerSearchComponent } from './beer-search/beer-search.component';
 
 @NgModule({
@@ -34,7 +33,6 @@ import { BeerSearchComponent } from './beer-search/beer-search.component';
         DashboardComponent,
         BeersComponent,
         BeerDetailComponent,
-        MessagesComponent,
         BeerSearchComponent,
     ],
     bootstrap: [AppComponent]
