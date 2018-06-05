@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { BeersComponent } from './beers/beers.component';
+import { AddBeerComponent } from './add-beer/add-beer.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { BeersComponent } from './beers/beers.component';
         AppComponent,
         DashboardComponent,
         BeersComponent,
-        BeerDetailComponent
+        BeerDetailComponent,
+        AddBeerComponent
     ],
     bootstrap: [AppComponent]
 })
