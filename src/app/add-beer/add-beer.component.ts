@@ -8,6 +8,7 @@ import { BeerService } from '../beer.service';
     styleUrls: ['./add-beer.component.css']
 })
 export class AddBeerComponent implements OnInit {
+    public selectedFileName: string;
 
     constructor(private beerService: BeerService) { }
 
@@ -23,5 +24,10 @@ export class AddBeerComponent implements OnInit {
                 console.log('A new beer added');
                 console.log(beer);
             });
+    }
+    public getFileName ($event, beerPhotos: any): void {
+        if (beerPhotos.length > 0) {
+            this.selectedFileName = beerPhotos[0].name;
+        }
     }
 }

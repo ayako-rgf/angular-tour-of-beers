@@ -13,7 +13,7 @@ h1 {
   body {
     margin: 2em;
   }
-  body, input[text], button {
+  body, input[text] {
     color: #888;
     font-family: Cambria, Georgia;
   }
@@ -21,7 +21,7 @@ h1 {
     cursor: pointer;
     cursor: hand;
   }
-  button {
+  /* button {
     font-family: Arial;
     background-color: #eee;
     border: none;
@@ -37,7 +37,7 @@ h1 {
     background-color: #eee;
     color: #aaa;
     cursor: auto;
-  }
+  } */
   
   /* Navigation link styles */
   nav a {

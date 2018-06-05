@@ -1,11 +1,18 @@
 <h2>Add a new beer</h2>
-
 <div>
-    <label>Beer name:
-        <input #beerName />
-    </label>
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(beerName.value); beerName.value=''">
-        add
-    </button>
+    <div>
+        <mat-form-field class="example-full-width">
+            <input matInput #beerName placeholder="Beer Name">
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-raised-button (click)="imgFileInput.click()">Select a photo</button>
+        <input hidden type="file" #imgFileInput (change)="getFileName($event, imgFileInput.files)" /> {{selectedFileName}}
+    </div>
+    <br/>
+    <div>
+        <button mat-raised-button (click)="add(beerName.value); beerName.value=''; selectedFileName=''">
+            add
+        </button>
+    </div>
 </div>
