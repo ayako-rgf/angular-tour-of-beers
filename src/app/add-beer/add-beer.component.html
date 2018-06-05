@@ -1,3 +1,11 @@
-<p>
-  add-beer works!
-</p>
+<h2>Add a new beer</h2>
+
+<div>
+    <label>Beer name:
+        <input #beerName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(beerName.value); beerName.value=''">
+        add
+    </button>
+</div>
