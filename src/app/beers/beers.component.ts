@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource } from '@angular/material';
 import { Beer } from '../beer';
 import { BeerService } from '../beer.service';
 
@@ -7,8 +8,9 @@ import { BeerService } from '../beer.service';
     styleUrls: ['./beers.component.css']
 })
 export class BeersComponent implements OnInit {
-    beers: Beer[];
+    dataSource;
     displayedColumns: string[] = ['id', 'name', 'country'];
+    @ViewChild(MatSort) sort: MatSort;
     constructor(private beerService: BeerService) { }
 
     ngOnInit() {
@@ -16,6 +18,9 @@ export class BeersComponent implements OnInit {
     }
     public getBeers(): void {
         this.beerService.getBeers()
-            .subscribe(beers => this.beers = beers);
+            .subscribe(beers => {
+                this.dataSource = new MatTableDataSource(beers);
+                this.dataSource.sort = this.sort;
+            });
     }
 }
