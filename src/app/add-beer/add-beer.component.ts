@@ -14,12 +14,12 @@ export class AddBeerComponent implements OnInit {
 
     ngOnInit() {
     }
-    public add(name: string): void {
+    public add(name: string, country: string): void {
         name = name.trim();
         if (!name) {
             return;
         }
-        this.beerService.addBeer({ name } as Beer)
+        this.beerService.addBeer({ name, country } as Beer)
             .subscribe(beer => {
                 console.log('A new beer added');
                 console.log(beer);
