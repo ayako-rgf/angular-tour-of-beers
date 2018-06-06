@@ -11,13 +11,13 @@
         </mat-form-field>
     </div>
     <div>
-        <button mat-raised-button (click)="imgFileInput.click()">Select a photo</button>
+        <button mat-raised-button (click)="imgFileInput.click()">Select a Photo</button>
         <input hidden type="file" #imgFileInput (change)="getFileName($event, imgFileInput.files)" /> {{selectedFileName}}
     </div>
     <br/>
     <div>
         <button mat-raised-button (click)="add(beerName.value, country.value); beerName.value=''; country.value=''; selectedFileName=''">
-            add
+            Add
         </button>
     </div>
 </div>
