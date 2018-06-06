@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -13,7 +14,8 @@ describe('DashboardComponent', () => {
             declarations: [DashboardComponent],
             imports: [
                 HttpClientModule,
-                RouterTestingModule
+                RouterTestingModule,
+                MatCardModule
             ]
         })
             .compileComponents();
