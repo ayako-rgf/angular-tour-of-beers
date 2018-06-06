@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'Tour of Beers';
+    navLinks = [{
+        label: 'Dashboard',
+        link: '/dashboard'
+    }, {
+        label: 'All Beers',
+        link: '/beers'
+    }, {
+        label: 'Add New',
+        link: '/add-beer'
+    }];
 }

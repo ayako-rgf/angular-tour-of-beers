@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatButtonModule, MatTableModule, MatSortModule, MatCardModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatTableModule,
+          MatSortModule, MatCardModule, MatTabsModule } from '@angular/material';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -26,6 +27,7 @@ import { AddBeerComponent } from './add-beer/add-beer.component';
         MatTableModule,
         MatSortModule,
         MatCardModule,
+        MatTabsModule,
         AppRoutingModule,
         HttpClientModule,
         HttpClientInMemoryWebApiModule.forRoot(
