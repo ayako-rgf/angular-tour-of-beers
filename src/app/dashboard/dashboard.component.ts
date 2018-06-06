@@ -16,8 +16,12 @@ export class DashboardComponent implements OnInit {
         this.getBeers();
     }
 
-    getBeers(): void {
+    private getBeers(): void {
         this.beerService.getBeers()
             .subscribe(beers => this.beers = beers.slice(1, 5));
+    }
+    public getImagePath(id: string): string {
+        const path = '/assets/images/' + id + '.jpg';
+        return path;
     }
 }
