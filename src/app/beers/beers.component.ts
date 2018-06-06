@@ -8,6 +8,7 @@ import { BeerService } from '../beer.service';
 })
 export class BeersComponent implements OnInit {
     beers: Beer[];
+    displayedColumns: string[] = ['id', 'name', 'country'];
     constructor(private beerService: BeerService) { }
 
     ngOnInit() {
@@ -16,9 +17,5 @@ export class BeersComponent implements OnInit {
     public getBeers(): void {
         this.beerService.getBeers()
             .subscribe(beers => this.beers = beers);
-    }
-    public delete(beer: Beer): void {
-        this.beers = this.beers.filter(b => b !== beer);
-        this.beerService.deleteBeer(beer).subscribe();
     }
 }

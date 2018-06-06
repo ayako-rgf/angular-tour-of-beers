@@ -37,4 +37,8 @@ export class BeerDetailComponent implements OnInit {
         this.beerService.updateBeer(this.beer)
             .subscribe(() => this.goBack());
     }
+    public delete(): void {
+        this.beerService.deleteBeer(this.beer)
+            .subscribe(() => this.goBack());
+    }
 }

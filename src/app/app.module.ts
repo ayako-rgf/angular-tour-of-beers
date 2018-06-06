@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatButtonModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatTableModule } from '@angular/material';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -23,6 +23,7 @@ import { AddBeerComponent } from './add-beer/add-beer.component';
         BrowserAnimationsModule,
         MatInputModule,
         MatButtonModule,
+        MatTableModule,
         AppRoutingModule,
         HttpClientModule,
         HttpClientInMemoryWebApiModule.forRoot(
