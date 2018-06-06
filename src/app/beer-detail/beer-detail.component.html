@@ -2,7 +2,7 @@
     <h2>{{ beer.name | uppercase }} Details</h2>
     <div>
         <mat-form-field>
-            <input matInput [(ngModel)]="beer.id" placeholder="id" disabled="true">
+            <input matInput [(ngModel)]="beer.id" placeholder="ID" disabled="true">
         </mat-form-field>
     </div>
     <div>
@@ -16,7 +16,7 @@
         </mat-form-field>
     </div>
     <div>
-        <img class="bird" src="{{getImagePath()}}">
+        <img src="{{getImagePath()}}">
     </div>
     <button mat-raised-button (click)="goBack()">Go Back</button>
     <button mat-raised-button color="warn" (click)="delete()">Delete</button>
