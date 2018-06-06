@@ -1,16 +1,24 @@
 <div *ngIf="beer">
     <h2>{{ beer.name | uppercase }} Details</h2>
     <div>
-        <span>id: </span>{{beer.id}}</div>
+        <mat-form-field>
+            <input matInput [(ngModel)]="beer.id" placeholder="id" disabled="true">
+        </mat-form-field>
+    </div>
     <div>
-        <mat-form-field class="example-full-width">
-            <input matInput [(ngModel)]="beer.name" placeholder="name">
+        <mat-form-field>
+            <input matInput [(ngModel)]="beer.name" placeholder="Name">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput [(ngModel)]="beer.country" placeholder="Country of Origin">
         </mat-form-field>
     </div>
     <div>
         <img class="bird" src="{{getImagePath()}}">
     </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="delete()">delete</button>
-    <button (click)="save()">save</button>
+    <button mat-raised-button (click)="goBack()">Go Back</button>
+    <button mat-raised-button color="warn" (click)="delete()">Delete</button>
+    <button mat-raised-button (click)="save()">Save</button>
 </div>
