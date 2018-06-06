@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 import { Beer } from '../beer';
 import { BeerService } from '../beer.service';
 
@@ -10,7 +11,7 @@ import { BeerService } from '../beer.service';
 export class AddBeerComponent implements OnInit {
     public selectedFileName: string;
 
-    constructor(private beerService: BeerService) { }
+    constructor(private beerService: BeerService, public snackBar: MatSnackBar) { }
 
     ngOnInit() {
     }
@@ -21,13 +22,19 @@ export class AddBeerComponent implements OnInit {
         }
         this.beerService.addBeer({ name, country } as Beer)
             .subscribe(beer => {
-                console.log('A new beer added');
-                console.log(beer);
+                const message = 'A new beer "' + name + '" added';
+                console.log(message);
+                this.openSnackBar(message);
             });
     }
     public getFileName ($event, beerPhotos: any): void {
         if (beerPhotos.length > 0) {
             this.selectedFileName = beerPhotos[0].name;
         }
+    }
+    public openSnackBar (message: string): void {
+        this.snackBar.open(message, null, {
+            duration: 2000
+        });
     }
 }

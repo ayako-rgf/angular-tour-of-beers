@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule, MatTableModule,
-          MatSortModule, MatCardModule, MatTabsModule } from '@angular/material';
+            MatSortModule, MatCardModule, MatTabsModule,
+            MatSnackBarModule } from '@angular/material';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -28,6 +29,7 @@ import { AddBeerComponent } from './add-beer/add-beer.component';
         MatSortModule,
         MatCardModule,
         MatTabsModule,
+        MatSnackBarModule,
         AppRoutingModule,
         HttpClientModule,
         HttpClientInMemoryWebApiModule.forRoot(
